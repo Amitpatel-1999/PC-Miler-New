@@ -1,0 +1,173 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Dialog
+        id="dialog0"  
+        title="Route Options"
+    >
+        <VBox id="vbox0">
+            <HBox>
+                <Text
+                    text="Route Type :"
+                />
+                <RadioButtonGroup id="rbg1" select="routeType">
+                    <RadioButton
+                        id="rb1"
+                        text="Practical"
+                        selected="true"
+                        
+                    />
+                    <RadioButton
+                        id="rb2"
+                        text="Shortest"  
+                    />
+                    <RadioButton
+                        id="rb3"
+                        text="Fastest"
+                    />
+                </RadioButtonGroup>
+            </HBox>
+            <HBox>
+                <Text
+                    text="Override Class :"
+                />
+                <RadioButtonGroup id="rbg2" select="override">
+                    <RadioButton
+                        id="rb5"
+                        text="Fifty Three Foot"
+                        selected="true"
+                    />
+                    <RadioButton
+                        id="rb6"
+                        text="National Network"
+                    />
+                    <RadioButton
+                        id="rb7"
+                        text="National Network And Fifty Three Foot"
+                    />
+                     <RadioButton
+                        id="rb4"
+                        text="None"
+                    />
+                </RadioButtonGroup>
+            </HBox>
+            <HBox>
+                <CheckBox
+                    id="cb0"
+                    text="Highway Only"
+                    selected="false"
+                />
+            </HBox>
+            <HBox>
+                <CheckBox
+                    id="cb1"
+                    text="Avoid Tolls"
+                    selected="true"
+                />
+            </HBox>
+            <HBox>
+                <CheckBox
+                    id="cb2"
+                    text="Open Borders"
+                    selected="false"
+                />
+            </HBox>
+            <HBox>
+                <CheckBox
+                    id="cb3"
+                    text="Overide Restriction"
+                    selected="false"
+                />
+            </HBox>
+            <HBox>
+                <CheckBox
+                    id="cb4"
+                    text="Detailed Route"
+                    selected="true"
+                />
+            </HBox>
+            <Text />
+            <Text
+                id="dialtext2"
+                text="PC Miler Data Version :"
+            />
+            <Select
+                id="sel0"
+                width="100%"
+            >
+                <core:Item
+                    id="item0"
+                    text="Current (Latest) Version"
+                    key="Current"
+                />
+
+                 <core:Item
+                    id="item"
+                    text="PCM33"
+                    key="PCM33"
+                />
+
+                 <core:Item
+                    id="item2"
+                    text="PCM32"
+                    key="PCM32"
+                />
+
+                 <core:Item
+                    id="item3"
+                    text="PCM31"
+                    key="PCM31"
+                />
+
+                 <core:Item
+                    id="item4"
+                    text="PCM30"
+                    key="PCM30"
+                />
+
+                 <core:Item
+                    id="item5"
+                    text="PCM29"
+                    key="PCM29"
+                />
+
+                 <core:Item
+                    id="item6"
+                    text="PCM28"
+                    key="PCM28"
+                />
+
+                 <core:Item
+                    id="item7"
+                    text="PCM27"
+                    key="PCM27"
+                />
+
+                 <core:Item
+                    id="item8"
+                    text="PCM26"
+                    key="PCM26"
+                />
+            </Select>
+        </VBox>
+        <beginButton>
+            <Button
+                xmlns="sap.m"
+                text="Restore Default Options"
+                id="restore"
+                class="sapUiSmallMarginEnd"
+                press="onRestore"
+            />
+        </beginButton>
+        <endButton>
+            <Button
+                xmlns="sap.m"
+                text="Close"
+                id="close"
+                class="sapUiSmallMarginEnd"
+                press="onCloseDialog"
+            />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

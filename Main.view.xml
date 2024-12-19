@@ -1,0 +1,330 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.ui.table"
+    xmlns:m="sap.m"
+    xmlns:u="sap.ui.unified"
+    controllerName="ymsli.com.zfitddistanceduration.controller.Main"
+    xmlns:core="sap.ui.core"
+    xmlns:vbm="sap.ui.vbm"
+    xmlns:l="sap.ui.layout"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    height="100%"
+    displayBlock="true"
+>
+    <m:Page
+        id="page"
+        title="Distance and Duration"
+        enableScrolling="true"
+    >
+        <m:content>
+            <m:Panel
+                width="auto"
+                expandable="true"
+                expanded="true"
+                id="panel0"
+                headerText="Locations"
+            >
+                <m:headerToolbar>
+                    <m:Toolbar id="toolbar1">
+                        <m:Title
+                            id="title1"
+                            text="Locations"
+                        />
+                    </m:Toolbar>
+                </m:headerToolbar>
+
+                <m:content>
+                    <html:div class="button-container">
+                        <Button
+                            xmlns="sap.m"
+                            text="Add"
+                            icon="sap-icon://add"
+                            id="add"
+                            class="sapUiSmallMarginEnd"
+                            press="onPressAdd"
+                            type="Emphasized"
+                        />
+
+                        <Button
+                            xmlns="sap.m"
+                            text="Delete"
+                            id="delete"
+                            icon="sap-icon://delete"
+                            class="sapUiSmallMarginEnd"
+                            press="onPressDelete"
+                            type="Emphasized"
+                        />
+
+                        <Button
+                            xmlns="sap.m"
+                            text="Move Down"
+                            id="button2"
+                            icon="sap-icon://navigation-down-arrow"
+                            class="sapUiSmallMarginEnd"
+                            press="onPressMoveDown"
+                            type="Emphasized"
+                        />
+
+                        <Button
+                            xmlns="sap.m"
+                            text="Move Up"
+                            icon="sap-icon://navigation-up-arrow"
+                            id="button4"
+                            class="sapUiSmallMarginEnd"
+                            press="onPressMoveUp"
+                            type="Emphasized"
+                        />
+
+                        <Button
+                            xmlns="sap.m"
+                            text="Route Option"
+                            id="button3"
+                            icon="sap-icon://wrench"
+                            class="sapUiSmallMarginEnd"
+                            press="onPressRouteOption"
+                            type="Emphasized"
+                        />
+
+                        <Button
+                            xmlns="sap.m"
+                            text="Execute"
+                            id="button5"
+                            icon="sap-icon://play"
+                            class="sapUiSmallMarginEnd"
+                            press="onPressExecute"
+                            type="Success"
+                        />
+                    </html:div>
+
+                    <Table
+                        id="table0"
+                        class="sapUiSizeCondensed"
+                        rows="{/TabDataSet}"
+                        alternateRowColors="true"
+                        selectionMode="Single"
+                        selectionBehavior="Row"
+                    >
+                        <columns>
+                            <Column
+                                id="column0"
+                                class="clmn"
+                            >
+                                <m:Text
+                                    text="Customer"
+                                    id="Label0"
+                                />
+
+                                <template>
+                                    <m:Input
+                                        id="input0"
+                                        value="{LocNo}"
+                                    />
+                                </template>
+                            </Column>
+
+                            <Column
+                                id="column1"
+                                class="clmn"
+                            >
+                                <m:Text
+                                    text="Street"
+                                    id="Label1"
+                                />
+
+                                <template>
+                                    <m:Input
+                                        id="input1"
+                                        value="{Street}"
+                                    />
+                                </template>
+                            </Column>
+
+                            <Column
+                                id="column2"
+                                class="clmn"
+                            >
+                                <m:Text
+                                    text="City"
+                                    id="Label2"
+                                />
+
+                                <template>
+                                    <m:Input
+                                        id="input2"
+                                        value="{City}"
+                                    />
+                                </template>
+                            </Column>
+
+                            <Column
+                                id="column3"
+                                class="clmn"
+                            >
+                                <m:Text
+                                    text="State"
+                                    id="Label3"
+                                />
+
+                                <template>
+                                    <m:Input
+                                        id="input3"
+                                        value="{State}"
+                                    />
+                                </template>
+                            </Column>
+
+                            <Column
+                                id="column4"
+                                class="clmn"
+                            >
+                                <m:Text
+                                    text="Zip"
+                                    id="Label4"
+                                />
+
+                                <template>
+                                    <m:Input
+                                        id="input4"
+                                        value="{Zip}"
+                                    />
+                                </template>
+                            </Column>
+
+                            <Column
+                                id="column5"
+                                class="clmn"
+                            >
+                                <m:Text
+                                    text="Country"
+                                    id="Label5"
+                                />
+                                <template>
+                                    <m:ComboBox
+                                        value="{Country}"
+				                        items="{
+                                            path : 'searchHelp>/' ,
+                                            length : 300
+                                            }"
+                                        >
+				                        <core:Item key="{searchHelp>CountryCd}" text="{searchHelp>CountryText}" />
+			                        </m:ComboBox>
+                                </template>
+                            </Column>
+
+                            <Column
+                                id="column6"
+                                class="clmn"
+                            >
+                                <m:Text
+                                    text="Duration"
+                                    id="Label6"
+                                />
+
+                                <template>
+                                    <m:Text
+                                        id="text0"
+                                        text="{Duration}"
+                                    />
+                                </template>
+                            </Column>
+
+                            <Column
+                                id="column7"
+                                class="clmn"
+                            >
+                                <m:Text
+                                    text="Distance"
+                                    id="Label7"
+                                />
+
+                                <template>
+                                    <m:Text
+                                        id="text1"
+                                        text="{Distance}"
+                                    />
+                                </template>
+                            </Column>
+
+                            <Column
+                                id="column8"
+                                class="clmn"
+                            >
+                                <m:Text
+                                    text="Longitude"
+                                    id="Label8"
+                                />
+
+                                <template>
+                                    <m:Text
+                                        id="text2"
+                                        text="{Longitude}"
+                                    />
+                                </template>
+                            </Column>
+
+                            <Column
+                                id="column9"
+                                class="clmn"
+                            >
+                                <m:Text
+                                    text="Latitude"
+                                    id="Label9"
+                                />
+
+                                <template>
+                                    <m:Text
+                                        id="text3"
+                                        text="{Latitude}"
+                                    />
+                                </template>
+                            </Column>
+
+                            <Column
+                                id="column10"
+                                class="clmn"
+                            >
+                                <m:Text
+                                    text="Time Zone"
+                                    id="Label10"
+                                />
+
+                                <template>
+                                    <m:Text
+                                        id="text4"
+                                        text="{TimeZone}"
+                                    />
+                                </template>
+                            </Column>
+                        </columns>
+                    </Table>
+                </m:content>
+            </m:Panel>
+
+            <m:Panel
+                width="auto"
+                expandable="true"
+                expanded="true"
+                id="panel1"
+                headerText="Map"
+            >
+                <m:headerToolbar>
+                    <m:Toolbar id="toolbar2">
+                        <m:Title
+                            id="title2"
+                            text="Map"
+                        />
+                    </m:Toolbar>
+                </m:headerToolbar>
+
+                <vbm:GeoMap id="geoMap" width="100%" openWindow="onOpenDetail" closeWindow="onCloseDetail" initialPosition="{initialPosition}" initialZoom="5">
+                <vbm:Spots items="{routeModel>/markerLocations}" click="onClickItem">
+                    <vbm:Spot position="{routeModel>position}" tooltip="{routeModel>tooltip}" type="Inactive" click="onClickSpot" key="{routeModel>key}"></vbm:Spot>
+                </vbm:Spots>
+                    <vbm:Routes items="{routeModel>/pathArr}">
+                    <vbm:Route position="{routeModel>position}" start="0" end="1" colorBorder="rgb(255,255,255)" tooltip="{routeModel>tooltip}"/>
+                    </vbm:Routes>
+                </vbm:GeoMap>
+            </m:Panel>
+        </m:content>
+    </m:Page>
+</mvc:View>
